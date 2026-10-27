@@ -1,4 +1,5 @@
 name: Veille (campagnes + streamers)
+# (planification réenregistrée après le passage en public)
 
 # Fréquence choisie automatiquement selon la visibilité du dépôt :
 #   - dépôt PRIVÉ  : 2 passages / heure (h:07 et h:37) -> ~1 440 min / mois, sous les 2 000 min gratuites
