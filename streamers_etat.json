@@ -1,5 +1,11 @@
 {
- "lives": {},
+ "lives": {
+  "twitch:jynxzi": {
+   "depuis": "2026-10-27T18:36:09Z",
+   "id": null,
+   "live": true
+  }
+ },
  "videos": {
   "UCWsDFcIhY2DBi3GB5uykGXA": [
    "uQlACpbi4WM",
@@ -15,6 +21,7 @@
    "CWyKWikDj6c"
   ],
   "UCjiXtODGCCulmhwypZAWSag": [
+   "paD4IhhHzvw",
    "TKXFCUm6IQ8",
    "u0iATr7A5KM",
    "NzRv0-ZmLTI",
