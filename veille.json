@@ -1,0 +1,52 @@
+{
+  "taux_min_dollars_par_1000_vues": 0.75,
+  "budget_restant_min_dollars": 300,
+  "progression_max_pourcent": 85,
+  "plateformes_acceptees": [
+    "tiktok",
+    "instagram",
+    "youtube"
+  ],
+  "mots_cles_obligatoires": [
+    "clip"
+  ],
+  "mots_cles_bonus": [
+    "stream",
+    "twitch",
+    "kick",
+    "kai",
+    "cenat",
+    "n3on",
+    "lacy",
+    "speed",
+    "yomi",
+    "français",
+    "podcast",
+    "streamer",
+    "irl"
+  ],
+  "mots_cles_exclus": [
+    "ugc",
+    "faceless",
+    "slideshow",
+    "lyric",
+    "sound campaign",
+    "music campaign",
+    "face on camera",
+    "as the sound",
+    "edm track",
+    "roblox",
+    "telegram",
+    "dedicated fan page",
+    "dedicated page"
+  ],
+  "verifiees_seulement": false,
+  "ignorer_sur_candidature": false,
+  "top": {
+    "taux_min_dollars_par_1000_vues": 1.5,
+    "clippeurs_max": 10,
+    "publiee_depuis_heures_max": 48,
+    "budget_restant_min_dollars": 1000,
+    "progression_max_pourcent": 30
+  }
+}

@@ -1,0 +1,15 @@
+# secrets et fichiers locaux : jamais sur GitHub
+.env
+.env.*
+*.key
+*.pem
+.venv/
+work/
+__pycache__/
+.DS_Store
+*.pyc
+*.log
+.vscode/
+.idea/
+secrets*
+*.local.json

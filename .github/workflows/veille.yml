@@ -1,0 +1,64 @@
+name: Veille (campagnes + streamers)
+
+# Fréquence choisie automatiquement selon la visibilité du dépôt :
+#   - dépôt PRIVÉ  : 2 passages / heure (h:07 et h:37) -> ~1 440 min / mois, sous les 2 000 min gratuites
+#   - dépôt PUBLIC : toutes les 5 min en plus (minutes illimitées et gratuites sur un dépôt public)
+# Les passages « */5 » sont SAUTÉS tant que le dépôt est privé : un job sauté ne consomme aucune minute.
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+    - cron: "*/5 * * * *"
+  workflow_dispatch:          # bouton « Run workflow » = mode test (envoie un état sur Discord)
+
+permissions:
+  contents: write             # seulement pour enregistrer les fichiers d'état (*_etat.json)
+
+concurrency:
+  group: veille
+  cancel-in-progress: false
+
+jobs:
+  veille:
+    if: >-
+      github.event_name == 'workflow_dispatch'
+      || github.event.schedule == '7,37 * * * *'
+      || github.event.repository.visibility == 'public'
+      || vars.VEILLE_RAPIDE == 'oui'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5        # sécurité : un passage ne peut jamais tourner plus de 5 min
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false   # le jeton GitHub n'est donné qu'à la dernière étape
+      - name: Campagnes Content Rewards
+        continue-on-error: true
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_WEBHOOK_TOP: ${{ secrets.DISCORD_WEBHOOK_TOP }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          VEILLE_ETAT: veille_etat.json
+          MODE: ${{ github.event_name == 'workflow_dispatch' && '--test' || '' }}
+        run: timeout 100 python3 veille.py $MODE
+      - name: Streamers (lives + nouvelles vidéos)
+        continue-on-error: true
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_WEBHOOK_LIVES: ${{ secrets.DISCORD_WEBHOOK_LIVES }}
+          KICK_CLIENT_ID: ${{ secrets.KICK_CLIENT_ID }}
+          KICK_CLIENT_SECRET: ${{ secrets.KICK_CLIENT_SECRET }}
+          STREAMERS_ETAT: streamers_etat.json
+          MODE: ${{ github.event_name == 'workflow_dispatch' && '--test' || '' }}
+        run: timeout 150 python3 streamers.py $MODE
+      - name: Enregistrer l'état
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if [ -n "$(git status --porcelain -- '*_etat.json')" ]; then
+            git config user.name "veille-bot"
+            git config user.email "veille-bot@users.noreply.github.com"
+            git add -- '*_etat.json'
+            git commit -m "veille : état mis à jour"
+            git pull --rebase --quiet || true
+            git push
+          fi
