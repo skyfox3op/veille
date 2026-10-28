@@ -3,10 +3,55 @@
   "ping_lives": true,
   "videos_longues_seulement": true,
   "streamers": [
-    {"nom": "IShowSpeed", "youtube": ["UCWsDFcIhY2DBi3GB5uykGXA"], "twitch": null, "kick": null},
-    {"nom": "Kai Cenat", "youtube": ["UCvCfpQXRXdJdL07pzTIA6Cw", "UCoEmptob-eEGKk18c2VplJg"], "twitch": "kaicenat", "kick": null},
-    {"nom": "Adin Ross", "youtube": ["UCey-eDTR5J6xU6pZ2f4guoA"], "twitch": null, "kick": "adinross"},
-    {"nom": "xQc", "youtube": ["UCmDTrq0LNgPodDOFZiSbsww"], "twitch": "xqc", "kick": "xqc"},
-    {"nom": "Jynxzi", "youtube": ["UCjiXtODGCCulmhwypZAWSag"], "twitch": "jynxzi", "kick": null}
+    {
+      "nom": "IShowSpeed",
+      "youtube": [
+        "UCWsDFcIhY2DBi3GB5uykGXA"
+      ],
+      "twitch": null,
+      "kick": null
+    },
+    {
+      "nom": "Kai Cenat",
+      "youtube": [
+        "UCvCfpQXRXdJdL07pzTIA6Cw",
+        "UCoEmptob-eEGKk18c2VplJg"
+      ],
+      "twitch": "kaicenat",
+      "kick": null
+    },
+    {
+      "nom": "Adin Ross",
+      "youtube": [
+        "UCey-eDTR5J6xU6pZ2f4guoA"
+      ],
+      "twitch": null,
+      "kick": "adinross"
+    },
+    {
+      "nom": "xQc",
+      "youtube": [
+        "UCmDTrq0LNgPodDOFZiSbsww"
+      ],
+      "twitch": "xqc",
+      "kick": "xqc"
+    },
+    {
+      "nom": "Jynxzi",
+      "youtube": [
+        "UCjiXtODGCCulmhwypZAWSag"
+      ],
+      "twitch": "jynxzi",
+      "kick": null
+    },
+    {
+      "nom": "N3on",
+      "youtube": [
+        "UCsiqlKIUDHZJVG4smMvhF4w",
+        "UCI3yUCaowNGs-CZWEXPp7hA"
+      ],
+      "twitch": null,
+      "kick": "n3on"
+    }
   ]
 }
