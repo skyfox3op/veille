@@ -1,5 +1,4 @@
-name: Veille (campagnes + streamers)
-# (planification réenregistrée après le passage en public)
+name: Veille (campagnes + streamers + radar)
 
 # Fréquence choisie automatiquement selon la visibilité du dépôt :
 #   - dépôt PRIVÉ  : 2 passages / heure (h:07 et h:37) -> ~1 440 min / mois, sous les 2 000 min gratuites
@@ -10,6 +9,9 @@ on:
     - cron: "7,37 * * * *"
     - cron: "*/5 * * * *"
   workflow_dispatch:          # bouton « Run workflow » = mode test (envoie un état sur Discord)
+  push:                       # quand tu modifies la liste des comptes : passage immédiat + résumé radar
+    branches: [main]
+    paths: [comptes.json, radar.py]
 
 permissions:
   contents: write             # seulement pour enregistrer les fichiers d'état (*_etat.json)
@@ -22,11 +24,12 @@ jobs:
   veille:
     if: >-
       github.event_name == 'workflow_dispatch'
+      || github.event_name == 'push'
       || github.event.schedule == '7,37 * * * *'
       || github.event.repository.visibility == 'public'
       || vars.VEILLE_RAPIDE == 'oui'
     runs-on: ubuntu-latest
-    timeout-minutes: 5        # sécurité : un passage ne peut jamais tourner plus de 5 min
+    timeout-minutes: 8        # sécurité : un passage ne peut jamais tourner plus de 8 min
     steps:
       - uses: actions/checkout@v5
         with:
@@ -50,15 +53,30 @@ jobs:
           STREAMERS_ETAT: streamers_etat.json
           MODE: ${{ github.event_name == 'workflow_dispatch' && '--test' || '' }}
         run: timeout 150 python3 streamers.py $MODE
+      - name: Installer yt-dlp (lecture TikTok)
+        continue-on-error: true
+        run: |
+          python3 -m pip install --quiet --user --break-system-packages --upgrade yt-dlp
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Radar (posts qui percent)
+        continue-on-error: true
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_WEBHOOK_LIVES: ${{ secrets.DISCORD_WEBHOOK_LIVES }}
+          DISCORD_WEBHOOK_RADAR: ${{ secrets.DISCORD_WEBHOOK_RADAR }}
+          RADAR_ETAT: radar_etat.json
+          RADAR_JOURNAL: radar_alertes.json
+          MODE: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') && '--test' || '' }}
+        run: timeout 150 python3 radar.py $MODE
       - name: Enregistrer l'état
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          if [ -n "$(git status --porcelain -- '*_etat.json')" ]; then
+          if [ -n "$(git status --porcelain -- '*_etat.json' radar_alertes.json)" ]; then
             git config user.name "veille-bot"
             git config user.email "veille-bot@users.noreply.github.com"
-            git add -- '*_etat.json'
+            git add -A -- $(ls *_etat.json radar_alertes.json 2>/dev/null)
             git commit -m "veille : état mis à jour"
             git pull --rebase --quiet || true
             git push

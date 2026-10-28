@@ -1,0 +1,13 @@
+{
+  "_aide": "Comptes surveillés par radar.py. youtube = @pseudo ou identifiant UC..., tiktok = pseudo sans @. Mets null si absent. Les seuils par défaut sont en bas ; tu peux en mettre des propres à un compte avec \"seuils\": {...}.",
+  "comptes": [
+    {"nom": "Kai Cenat", "youtube": ["@KaiCenatLive", "@KaiCenat"], "tiktok": "kaicenat"},
+    {"nom": "IShowSpeed", "youtube": ["@IShowSpeed"], "tiktok": "ishowspeed"}
+  ],
+  "seuils": {
+    "_aide_absolu": "alerte si, moins de heures_max après la publication, le post dépasse vues OU likes",
+    "absolu": {"heures_max": 10, "vues": 100000, "likes": 20000},
+    "_aide_relatif": "alerte si le post fait facteur fois plus que d'habitude pour ce compte au même âge (et au moins vues_min vues)",
+    "relatif": {"facteur": 3, "vues_min": 20000, "heures_max": 48}
+  }
+}

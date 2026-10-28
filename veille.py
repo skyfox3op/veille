@@ -55,7 +55,7 @@ def _env() -> dict:
             if "=" in l and not l.strip().startswith("#"):
                 k, v = l.split("=", 1)
                 env[k.strip()] = v.strip().strip('"').strip("'")
-    for k in ("DISCORD_WEBHOOK", "DISCORD_WEBHOOK_TOP", "DISCORD_WEBHOOK_LIVES", "NTFY_TOPIC",
+    for k in ("DISCORD_WEBHOOK", "DISCORD_WEBHOOK_TOP", "DISCORD_WEBHOOK_LIVES", "DISCORD_WEBHOOK_RADAR", "NTFY_TOPIC",
               "KICK_CLIENT_ID", "KICK_CLIENT_SECRET"):
         if os.environ.get(k):
             env[k] = os.environ[k].strip()
@@ -186,9 +186,19 @@ def embed(r: dict) -> dict:
 
 def envoyer_discord(url: str, embeds: list, texte: str = "", ping: bool = False):
     """`ping` = mention @everyone : force la notification push sur le téléphone."""
-    for i in range(0, len(embeds), 10):                     # Discord : 10 embeds max par message
+    paquets, cur, taille = [], [], 0                         # Discord : 10 embeds et ~6000 caractères par message
+    for e in embeds:
+        t = len(json.dumps(e, ensure_ascii=False))
+        if cur and (len(cur) >= 10 or taille + t > 5000):
+            paquets.append(cur)
+            cur, taille = [], 0
+        cur.append(e)
+        taille += t
+    if cur:
+        paquets.append(cur)
+    for i, paquet in enumerate(paquets):
         contenu = (("@everyone " if ping else "") + texte) if i == 0 else ""
-        corps = json.dumps({"content": contenu, "embeds": embeds[i:i + 10],
+        corps = json.dumps({"content": contenu, "embeds": paquet,
                             "allowed_mentions": {"parse": ["everyone"] if ping else []}}).encode()
         req = urllib.request.Request(url, data=corps, method="POST",
                                      headers={"Content-Type": "application/json", "User-Agent": UA})
