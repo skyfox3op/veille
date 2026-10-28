@@ -6,10 +6,11 @@
    "live": true
   },
   "twitch:jynxzi": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-10-27T18:36:09Z",
+   "fin": "2026-10-28T08:21:28Z",
    "id": null,
-   "live": true
+   "live": false
   },
   "twitch:xqc": {
    "depuis": "2026-10-27T22:37:58Z",
