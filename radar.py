@@ -45,8 +45,10 @@ COMMANDE_DL = ('cd ~/Downloads && yt-dlp -f "bv*[vcodec^=avc1]+ba[ext=m4a]/b" --
 
 _ID_YT = re.compile(r"UC[\w-]{22}")
 _HANDLE = re.compile(r"@[\w.-]{2,60}")
-_PSEUDO_TT = re.compile(r"[\w.]{2,40}")
-_ID_VIDEO = re.compile(r"[\w-]{6,40}")
+_PSEUDO_TT = re.compile(r"[\w.]{2,40}", re.ASCII)
+_ID_VIDEO = re.compile(r"[\w-]{6,40}", re.ASCII)
+DUREE_MAX_S = 110        # au-delà, les sources restantes attendent le passage suivant (rien n'est perdu)
+MAJ_VUES_S = 3600        # les vues d'un post déjà connu ne sont réenregistrées qu'1 fois par heure
 
 
 def _maintenant() -> datetime:
@@ -68,7 +70,7 @@ def _texte(s: str, n: int = 300) -> str:
     """Texte du post nettoyé (pas de mentions Discord, pas de faux liens), tronqué."""
     s = re.sub(r"\s+", " ", s or "").strip()
     s = s.replace("@", "@​")                      # @everyone / @here neutralisés
-    return re.sub(r"[\[\]]", "", s)[:n]
+    return re.sub(r"[\[\]`]", "", s)[:n]              # pas de faux bloc de commande
 
 
 # ---------------------------------------------------------------- YouTube
@@ -122,9 +124,10 @@ def posts_tiktok(pseudo: str) -> list:
         raise RuntimeError("yt-dlp absent")
     r = subprocess.run([exe, "--flat-playlist", "-J", "--playlist-items", "1:15", "--no-warnings",
                         "--socket-timeout", "10", f"https://www.tiktok.com/@{pseudo}"],
-                       capture_output=True, text=True, timeout=60)
+                       capture_output=True, text=True, timeout=40)
     if r.returncode:
-        raise RuntimeError("TikTok illisible")
+        derniere = (r.stderr.strip().splitlines() or [""])[-1][:200]
+        raise RuntimeError(f"TikTok illisible : {derniere}")
     out = []
     for v in (json.loads(r.stdout).get("entries") or []):
         vid = str(v.get("id") or "")
@@ -149,8 +152,10 @@ def courbe(age_h: float) -> float:
 
 def habitude(posts: dict, typ: str) -> dict:
     """Médiane des vues / likes des posts « mûrs » (2 à 30 jours) de ce type."""
+    # seulement les posts dont les vues ont été relevées à 48 h ou plus (sinon chiffre gelé trop tôt)
     murs = [p for p in posts.values() if p["type"] == typ
-            and BASE_MIN_H <= _heures_depuis(p["publie"]) <= BASE_MAX_H]
+            and (p.get("vu", 0) - p["publie"]) / 3600 >= BASE_MIN_H
+            and _heures_depuis(p["publie"]) <= BASE_MAX_H]
     if len(murs) < 3:
         return {}
     return {"vues": statistics.median(p["vues"] for p in murs),
@@ -207,6 +212,7 @@ def passage(cfg: dict, etat: dict):
     cache = etat.setdefault("chaines", {})
     s_defaut = {k: {**SEUILS_DEFAUT[k], **((cfg.get("seuils") or {}).get(k) or {})} for k in SEUILS_DEFAUT}
     jour = _maintenant().strftime("%Y-%m-%d")
+    debut = _maintenant().timestamp()
     for c in cfg.get("comptes", []):
         nom = str(c.get("nom") or "?")[:60]
         s = {k: {**s_defaut[k], **((c.get("seuils") or {}).get(k) or {})} for k in s_defaut}
@@ -216,22 +222,30 @@ def passage(cfg: dict, etat: dict):
             sources.append(("tiktok", str(c["tiktok"]).lstrip("@")))
         lignes = []
         for plat, ident in sources:
+            if _maintenant().timestamp() - debut > DUREE_MAX_S:
+                lignes.append(f"⏳ {NOMS[plat]} {ident} : reporté au passage suivant")
+                continue
             try:
                 lus = posts_youtube(chaine_youtube(ident, cache)) if plat == "youtube" else posts_tiktok(ident)
             except Exception as e:
                 erreurs += 1
-                print(f"{nom} / {NOMS[plat]} {ident} : lecture impossible ({type(e).__name__})")
+                print(f"{nom} / {NOMS[plat]} {ident} : lecture impossible ({type(e).__name__}: {str(e)[:200]})")
                 lignes.append(f"⚠️ {NOMS[plat]} {ident} : illisible pour l'instant")
                 continue
             cle = f"{plat}:{ident}"
             mem = comptes.setdefault(cle, {"posts": {}, "habitude": {}, "habitude_jour": ""})
             premiere = not mem["posts"]
+            maintenant = _maintenant().timestamp()
             for p in lus:
-                ancien = mem["posts"].get(p["id"], {})
-                vieux = premiere and _heures_depuis(p["publie"]) > max(s["absolu"]["heures_max"],
-                                                                       s["relatif"]["heures_max"])
-                mem["posts"][p["id"]] = {**ancien, **p,                # 1er passage : les vieux posts ne sont pas annoncés
-                                         "alertes": ancien.get("alertes", ["absolu", "relatif"] if vieux else [])}
+                ancien = mem["posts"].get(p["id"])
+                if ancien is None:                                     # mémoire minimale : pas de texte stocké ici
+                    vieux = premiere and _heures_depuis(p["publie"]) > max(s["absolu"]["heures_max"],
+                                                                           s["relatif"]["heures_max"])
+                    mem["posts"][p["id"]] = {"publie": p["publie"], "type": p["type"], "vues": p["vues"],
+                                             "likes": p["likes"], "vu": maintenant,
+                                             "alertes": ["absolu", "relatif"] if vieux else []}
+                elif maintenant - ancien.get("vu", 0) >= MAJ_VUES_S:  # vues réenregistrées 1 fois par heure max
+                    ancien.update(vues=p["vues"], likes=p["likes"], vu=maintenant)
             if mem["habitude_jour"] != jour:                       # recalcul 1 fois par jour seulement
                 mem["habitude"] = {t: habitude(mem["posts"], t) for t in ("video", "short")}
                 mem["habitude_jour"] = jour
@@ -242,12 +256,14 @@ def passage(cfg: dict, etat: dict):
                     alertes.append((nom, p, raisons))
                     m["alertes"] = m["alertes"] + [k for k, _ in raisons]
             # mémoire bornée : les POSTS_MAX plus récents, 30 jours max
-            garder = sorted(mem["posts"].values(), key=lambda p: -p["publie"])[:POSTS_MAX]
-            mem["posts"] = {p["id"]: p for p in garder if _heures_depuis(p["publie"]) <= BASE_MAX_H + 24}
+            garder = sorted(mem["posts"].items(), key=lambda kv: -kv[1]["publie"])[:POSTS_MAX]
+            mem["posts"] = {k: v for k, v in garder if _heures_depuis(v["publie"]) <= BASE_MAX_H + 24}
             h = mem["habitude"]
-            lignes.append(f"{NOMS[plat]} {ident} : {len(lus)} posts lus · habitude "
-                          + " / ".join(f"{t} {_n(h[t]['vues'])} vues" for t in ("video", "short") if h.get(t))
-                          if any(h.values()) else f"{NOMS[plat]} {ident} : {len(lus)} posts lus · habitude en cours de calcul")
+            if any(h.values()):
+                hab = " / ".join(f"{t} {_n(h[t]['vues'])} vues" for t in ("video", "short") if h.get(t))
+            else:
+                hab = "en cours de calcul (il faut des posts de plus de 2 jours)"
+            lignes.append(f"{NOMS[plat]} {ident} : {len(lus)} posts lus · habitude {hab}")
         resume.append({"title": nom, "description": "\n".join(lignes)[:1500] or "aucune source valide",
                        "color": 0x2B2D31})
     return alertes, resume, erreurs
