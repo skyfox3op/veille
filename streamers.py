@@ -33,7 +33,9 @@ NAV = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, lik
 DELAI_RELANCE_MIN = 75        # un live coupé puis relancé dans les 75 min ne renotifie pas (> écart entre 2 passages)
 ABSENCES_FIN = 2              # « fin de live » seulement après 2 passages de suite sans live (évite les fausses fins)
 VIDEO_MAX_HEURES = 48         # on ignore les vidéos plus vieilles (évite les vieux envois au 1er passage)
-COMMANDE = 'cd ~/Documents/"ark obs stream"/"smart clipper" && bash clip.sh "{url}"'
+# 2 lignes à coller ensemble dans le Terminal : monter les clips, puis programmer les Shorts du jour
+COMMANDE = ('cd ~/Documents/"ark obs stream"/"smart clipper" && bash clip.sh "{url}"\n'
+            'bash publier.sh --aujourdhui')
 
 _ID_YT = re.compile(r"^UC[\w-]{22}$")
 _PSEUDO = re.compile(r"^[A-Za-z0-9_]{2,40}$")
@@ -181,7 +183,7 @@ def embed_fin(nom: str, plat: str, ancien: dict) -> dict:
     texte = f"Durée : {_duree(ancien.get('depuis'))}."
     if plat == "youtube" and _ID_VIDEO.fullmatch(str(ancien.get("id") or "")):
         url = f"https://youtu.be/{ancien['id']}"
-        texte += f"\nRediffusion à clipper (dispo dans 1 à 3 h) :\n```{COMMANDE.format(url=url)}```"
+        texte += f"\nRediffusion à clipper (dispo dans 1 à 3 h), puis Shorts programmés :\n```{COMMANDE.format(url=url)}```"
     else:
         texte += "\nLa rediffusion arrive en général sur sa chaîne YouTube dans les heures qui suivent."
     return {"title": f"⚫ Fin du live {NOMS[plat]} de {nom}"[:250], "description": texte[:1500], "color": 0x555555}
@@ -189,7 +191,7 @@ def embed_fin(nom: str, plat: str, ancien: dict) -> dict:
 
 def embed_video(nom: str, v: dict) -> dict:
     return {"title": f"🎬 {nom} : {v['titre']}"[:250], "url": v["url"], "color": 0xFF0000,
-            "description": f"Nouvelle vidéo. Pour la clipper :\n```{COMMANDE.format(url=v['url'])}```"[:1500]}
+            "description": f"Nouvelle vidéo. Pour la clipper puis programmer les Shorts (colle les 2 lignes) :\n```{COMMANDE.format(url=v['url'])}```"[:1500]}
 
 
 # ---------------------------------------------------------------- passage
