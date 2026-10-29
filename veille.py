@@ -55,7 +55,7 @@ def _env() -> dict:
             if "=" in l and not l.strip().startswith("#"):
                 k, v = l.split("=", 1)
                 env[k.strip()] = v.strip().strip('"').strip("'")
-    for k in ("DISCORD_WEBHOOK", "DISCORD_WEBHOOK_TOP", "DISCORD_WEBHOOK_LIVES", "DISCORD_WEBHOOK_RADAR", "NTFY_TOPIC",
+    for k in ("DISCORD_WEBHOOK", "DISCORD_WEBHOOK_TOP", "DISCORD_WEBHOOK_LIVES", "DISCORD_WEBHOOK_RADAR", "DISCORD_WEBHOOK_VIDEOS", "NTFY_TOPIC",
               "KICK_CLIENT_ID", "KICK_CLIENT_SECRET"):
         if os.environ.get(k):
             env[k] = os.environ[k].strip()

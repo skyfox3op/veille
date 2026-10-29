@@ -9,7 +9,7 @@ Usage :
   python3 streamers.py --test    # envoie l'état actuel de tous les streamers (vérification)
 
 Secrets (variables d'environnement GitHub, ou fichier .env en local, jamais dans le code) :
-  DISCORD_WEBHOOK_LIVES  (sinon DISCORD_WEBHOOK)    KICK_CLIENT_ID / KICK_CLIENT_SECRET (facultatif)
+  DISCORD_WEBHOOK_LIVES  (sinon DISCORD_WEBHOOK)    DISCORD_WEBHOOK_VIDEOS (nouvelles vidéos ; sinon salon lives)    KICK_CLIENT_ID / KICK_CLIENT_SECRET (facultatif)
 """
 import json
 import os
@@ -290,7 +290,13 @@ def main():
         envoyer_discord(webhook, resume, f"{date_fr()}\n{intro} : état actuel"
                         + (f" ({erreurs} source(s) illisible(s), voir le journal GitHub)" if erreurs else ""))
     if alertes and not premiere:                              # en test aussi : sinon l'alerte serait perdue
-        envoyer_discord(webhook, alertes, date_fr(), ping=bool(cfg.get("ping_lives", True)))
+        videos = [e for e in alertes if e.get("title", "").startswith("🎬")]   # nouvelles vidéos YouTube
+        lives = [e for e in alertes if e not in videos]                        # débuts / fins de live
+        webhook_videos = env.get("DISCORD_WEBHOOK_VIDEOS") or webhook
+        if lives:
+            envoyer_discord(webhook, lives, date_fr(), ping=bool(cfg.get("ping_lives", True)))
+        if videos:
+            envoyer_discord(webhook_videos, videos, f"{date_fr()}\n🎬 Nouvelle(s) vidéo(s) YouTube")
     print(f"{datetime.now():%H:%M} {len(cfg.get('streamers', []))} streamers, {len(alertes)} alerte(s), "
           f"{erreurs} erreur(s)")
 

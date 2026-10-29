@@ -48,6 +48,7 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_WEBHOOK_LIVES: ${{ secrets.DISCORD_WEBHOOK_LIVES }}
+          DISCORD_WEBHOOK_VIDEOS: ${{ secrets.DISCORD_WEBHOOK_VIDEOS }}
           KICK_CLIENT_ID: ${{ secrets.KICK_CLIENT_ID }}
           KICK_CLIENT_SECRET: ${{ secrets.KICK_CLIENT_SECRET }}
           STREAMERS_ETAT: streamers_etat.json

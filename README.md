@@ -5,7 +5,7 @@ Tourne tout seul sur GitHub Actions et envoie des alertes Discord :
 | Script | Ce qu'il surveille | Salon Discord (secret) |
 |---|---|---|
 | `veille.py` | nouvelles campagnes Content Rewards (filtres : `veille.json`) | `DISCORD_WEBHOOK`, `DISCORD_WEBHOOK_TOP` |
-| `streamers.py` | lives YouTube / Twitch / Kick et nouvelles vidéos YouTube (liste : `streamers.json`) | `DISCORD_WEBHOOK_LIVES` |
+| `streamers.py` | lives YouTube / Twitch / Kick et nouvelles vidéos YouTube (liste : `streamers.json`) | `DISCORD_WEBHOOK_LIVES` (lives), `DISCORD_WEBHOOK_VIDEOS` (vidéos) |
 
 ## Fréquence (automatique)
 - Dépôt **privé** : 2 passages par heure (≈ 1 440 min / mois, sous les 2 000 min gratuites).
