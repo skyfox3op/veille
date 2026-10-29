@@ -67,7 +67,9 @@ def _lire_iso(s: str):
 # ---------------------------------------------------------------- YouTube
 def videos_youtube(cid: str, longues_seulement: bool) -> list:
     """Dernières vidéos d'une chaîne via le flux RSS public : [{id, titre, url, publie}]."""
-    xml = _get(f"https://www.youtube.com/feeds/videos.xml?channel_id={cid}")
+    # flux « UULF » = seulement les vidéos (ni lives ni Shorts) ; sinon flux complet de la chaîne
+    xml = _get(f"https://www.youtube.com/feeds/videos.xml?playlist_id=UULF{cid[2:]}" if longues_seulement
+               else f"https://www.youtube.com/feeds/videos.xml?channel_id={cid}")
     ns = {"a": "http://www.w3.org/2005/Atom", "yt": "http://www.youtube.com/xml/schemas/2015"}
     out = []
     for e in ET.fromstring(xml).findall("a:entry", ns):
@@ -273,8 +275,7 @@ def verifier(cfg: dict, env: dict, etat: dict):
                     deja.insert(0, v["id"])
                     d = _lire_iso(v["publie"])
                     recente = d and (maintenant - d).total_seconds() < VIDEO_MAX_HEURES * 3600
-                    if recente and v["id"] != live_id and (cfg.get("annoncer_rediffusions_lives")
-                                                           or not rediffusion_live(v["id"])):
+                    if recente and v["id"] != live_id:
                         alertes.append(embed_video(nom, v))   # seulement les vraies vidéos, pas les lives finis
                 vus[ident] = deja[:30]
                 if videos:
