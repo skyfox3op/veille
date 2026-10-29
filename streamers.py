@@ -103,6 +103,15 @@ def live_youtube(cid: str):
     return {"id": vid, "titre": _html(t.group(1)) if t else "", "url": f"https://youtu.be/{vid}"}
 
 
+def rediffusion_live(vid: str) -> bool:
+    """True si la vidéo est un live terminé (la page de la vidéo contient « isLiveContent »:true)."""
+    try:
+        html = _get(f"https://www.youtube.com/watch?v={vid}", {"Cookie": "CONSENT=YES+cb; SOCS=CAI"})
+        return '"isLiveContent":true' in html
+    except Exception:
+        return False                                     # en cas de doute, on annonce
+
+
 # ---------------------------------------------------------------- Twitch (page publique, sans clé)
 def live_twitch(login: str):
     html = _get(f"https://www.twitch.tv/{login}")
@@ -264,8 +273,9 @@ def verifier(cfg: dict, env: dict, etat: dict):
                     deja.insert(0, v["id"])
                     d = _lire_iso(v["publie"])
                     recente = d and (maintenant - d).total_seconds() < VIDEO_MAX_HEURES * 3600
-                    if recente and v["id"] != live_id:       # la rediffusion d'un live déjà signalé : pas de doublon
-                        alertes.append(embed_video(nom, v))
+                    if recente and v["id"] != live_id and (cfg.get("annoncer_rediffusions_lives")
+                                                           or not rediffusion_live(v["id"])):
+                        alertes.append(embed_video(nom, v))   # seulement les vraies vidéos, pas les lives finis
                 vus[ident] = deja[:30]
                 if videos:
                     titre = re.sub(r"[\[\]()]", "", videos[0]["titre"])[:60]    # pas de faux lien Markdown
