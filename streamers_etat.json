@@ -1,12 +1,14 @@
 {
  "lives": {
   "kick:n3on": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-10-30T01:15:54Z",
+   "fin": "2026-10-30T16:40:02Z",
    "id": "135032468",
-   "live": true
+   "live": false
   },
   "kick:xqc": {
+   "absences": 1,
    "depuis": "2026-10-29T21:22:45Z",
    "id": "134951978",
    "live": true
@@ -19,6 +21,7 @@
    "live": false
   },
   "twitch:xqc": {
+   "absences": 1,
    "depuis": "2026-10-29T21:22:45Z",
    "id": null,
    "live": true
@@ -56,6 +59,7 @@
    "SOW3qCJJSlQ"
   ],
   "UCey-eDTR5J6xU6pZ2f4guoA": [
+   "BkAKbFLVccs",
    "_NiTTEkcPsg",
    "EliIBflaMrk",
    "FnOwCg5us5g",
@@ -105,6 +109,7 @@
    "uJtaBkIAvGs"
   ],
   "UCmDTrq0LNgPodDOFZiSbsww": [
+   "9hN5DKcdCjA",
    "eRQQ_z1bEWM",
    "LnNbXXja9mg",
    "LIhLHFKKivU",
