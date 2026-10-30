@@ -1,6 +1,7 @@
 {
  "lives": {
   "kick:n3on": {
+   "absences": 1,
    "depuis": "2026-10-30T01:15:54Z",
    "id": "135002754",
    "live": true
@@ -11,10 +12,11 @@
    "live": true
   },
   "twitch:jynxzi": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-10-29T19:30:37Z",
+   "fin": "2026-10-30T02:51:43Z",
    "id": null,
-   "live": true
+   "live": false
   },
   "twitch:xqc": {
    "depuis": "2026-10-29T21:22:45Z",
