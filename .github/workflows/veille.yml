@@ -64,7 +64,7 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_WEBHOOK_LIVES: ${{ secrets.DISCORD_WEBHOOK_LIVES }}
-          DISCORD_WEBHOOK_RADAR: ${{ secrets.DISCORD_WEBHOOK_RADAR }}
+          DISCORD_WEBHOOK_VIDEOS: ${{ secrets.DISCORD_WEBHOOK_VIDEOS }}
           RADAR_ETAT: radar_etat.json
           RADAR_JOURNAL: radar_alertes.json
           MODE: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') && '--test' || '' }}

@@ -1,4 +1,5 @@
-"""Radar : repère les posts récents qui « percent » sur les comptes de comptes.json -> alerte Discord.
+"""Radar : repère les posts récents qui « percent » sur les comptes de comptes.json (vrais youtubeurs / streamers)
+-> alerte dans le salon Discord des vidéos (DISCORD_WEBHOOK_VIDEOS).
 
 Sources (sans clé, sans connexion) :
   - YouTube : flux RSS officiel de la chaîne (vues + likes de chaque vidéo / Short)
@@ -272,9 +273,11 @@ def passage(cfg: dict, etat: dict):
 def main():
     test = "--test" in sys.argv
     env = _env()
-    webhook = env.get("DISCORD_WEBHOOK_RADAR") or env.get("DISCORD_WEBHOOK_LIVES") or env.get("DISCORD_WEBHOOK", "")
+    # vidéos des vrais youtubeurs/streamers -> salon « vidéos » (le salon « radar » est réservé aux TikTok
+    # des clippeurs, surveillés depuis le Mac : TikTok bloque GitHub)
+    webhook = env.get("DISCORD_WEBHOOK_VIDEOS") or env.get("DISCORD_WEBHOOK_LIVES") or env.get("DISCORD_WEBHOOK", "")
     if not webhook:
-        sys.exit("ÉCHEC : ajoute le secret DISCORD_WEBHOOK_RADAR (ou DISCORD_WEBHOOK_LIVES)")
+        sys.exit("ÉCHEC : ajoute le secret DISCORD_WEBHOOK_VIDEOS (ou DISCORD_WEBHOOK_LIVES)")
     cfg = json.loads(CONFIG.read_text(encoding="utf-8"))
     etat = json.loads(ETAT.read_text(encoding="utf-8")) if ETAT.exists() else {}
     avant = json.dumps(etat, sort_keys=True)
