@@ -67,13 +67,13 @@ jobs:
           DISCORD_WEBHOOK_VIDEOS: ${{ secrets.DISCORD_WEBHOOK_VIDEOS }}
           RADAR_ETAT: radar_etat.json
           RADAR_JOURNAL: radar_alertes.json
-          MODE: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') && '--test' || '' }}
+          MODE: ${{ github.event_name == 'workflow_dispatch' && '--test' || '' }}
         run: timeout 150 python3 radar.py $MODE
       - name: Radar des clippeurs (TikTok qui percent)
         continue-on-error: true
         env:
           DISCORD_WEBHOOK_RADAR: ${{ secrets.DISCORD_WEBHOOK_RADAR }}
-          MODE: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') && '--test' || '' }}
+          MODE: ${{ github.event_name == 'workflow_dispatch' && '--test' || '' }}
         run: timeout 200 python3 radar_clippeurs.py $MODE
       - name: Enregistrer l'état
         env:
