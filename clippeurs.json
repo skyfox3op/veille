@@ -1,5 +1,5 @@
 {
- "_aide": "Clippeurs TikTok surveillés par radar_clippeurs.py (GitHub, toutes les 30 min). pseudo = sans @ ; secUid = identifiant TikTok (TikTok bloque la page de profil depuis GitHub, pas l'identifiant). Sans secUid, le pseudo est essayé quand même.",
+ "_aide": "Clippeurs TikTok surveillés par radar_clippeurs.py (GitHub, toutes les 30 min). pseudo = sans @ ; secUid = identifiant TikTok (TikTok bloque la page de profil depuis GitHub, pas l'identifiant). Sans secUid, le pseudo est essayé quand même. Pour un clippeur YouTube : \"youtube\" = identifiant UC... de sa chaîne (ses Shorts sont lus par le flux RSS).",
  "clippeurs": [
   {
    "pseudo": "clipartist1011",
@@ -100,6 +100,31 @@
   {
    "pseudo": "togi.clips",
    "secUid": "MS4wLjABAAAALjlFJAeb1oGaL47xHav8DqmeFV0vnSvwIv1w5AywP5F9npV0gYjX0tilFRxq036h"
+  },
+  {
+   "pseudo": "Mrkaisel",
+   "youtube": "UCpPVFIjgwnWN55euProqCDQ",
+   "_note": "clippeur DrDonut (YouTube Shorts)"
+  },
+  {
+   "pseudo": "DrMogger",
+   "youtube": "UCN2GmQ2VYFqW_xp6iNWVT_g",
+   "_note": "clippeur DrDonut (YouTube Shorts)"
+  },
+  {
+   "pseudo": "Memix",
+   "youtube": "UCPOx4jCTop5aJiMSMDjxCog",
+   "_note": "clippeur DrDonut (YouTube Shorts)"
+  },
+  {
+   "pseudo": "Rose Donutt",
+   "youtube": "UC2ByD3AlTqK_sGm8wLn8-ng",
+   "_note": "clippeur DrDonut (YouTube Shorts)"
+  },
+  {
+   "pseudo": "Donut Daily",
+   "youtube": "UCgIjrksydB33bHRy3MhGlLQ",
+   "_note": "clippeur DrDonut (YouTube Shorts)"
   }
  ]
 }

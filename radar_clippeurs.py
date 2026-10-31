@@ -14,7 +14,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 
-from radar import _age, _heures_depuis, _maintenant, _n, _texte, habitude, juger
+from radar import _age, _heures_depuis, _maintenant, _n, _texte, habitude, juger, posts_youtube
 from veille import _env, date_fr, envoyer_discord
 
 ROOT = Path(__file__).resolve().parent
@@ -26,7 +26,8 @@ SEUILS = {"absolu": {"heures_max": 10, "vues": 100000, "likes": 20000},
 INTERVALLE_S = 25 * 60           # GitHub lance le workflow toutes les 5 min : le radar clippeurs saute 5 fois sur 6
 DUREE_MAX_S = 150
 POSTS_MAX, BASE_MAX_H, MAJ_VUES_S = 60, 30 * 24, 3600
-_PSEUDO = re.compile(r"[\w.]{2,40}", re.ASCII)
+_PSEUDO = re.compile(r"[\w. ]{2,40}", re.ASCII)
+_UC = re.compile(r"UC[\w-]{22}", re.ASCII)
 _SEC = re.compile(r"MS4wLjABAAAA[\w-]{20,90}", re.ASCII)
 _ID = re.compile(r"\d{8,25}", re.ASCII)
 COMMANDE = 'cd ~/Documents/"ark obs stream"/"smart clipper" && bash radar_clippeurs.sh --telecharger'
@@ -67,11 +68,14 @@ def posts(pseudo: str, sec: str) -> list:
 
 
 def embed(pseudo: str, p: dict, raisons: list) -> dict:
+    plat = "YouTube Short" if p.get("plat") == "youtube" else "TikTok"
     desc = "\n".join(f"{'📈' if k == 'relatif' else '🚀'} {t}" for k, t in raisons)
     if p["texte"]:
         desc += f"\n\n> {p['texte']}"
-    desc += f"\n\nTélécharger tous les TikTok qui ont percé aujourd'hui :\n```{COMMANDE}```"
-    return {"title": f"🔥 @{pseudo} · TikTok", "url": p["url"], "color": 0x25F4EE, "description": desc[:3500],
+    if p.get("titre"):
+        desc = f"**{p['titre']}**\n" + desc
+    desc += f"\n\nTélécharger tous les clips qui ont percé aujourd'hui :\n```{COMMANDE}```"
+    return {"title": f"🔥 {pseudo} · {plat}", "url": p["url"], "color": 0xFF0000 if p.get("plat") == "youtube" else 0x25F4EE, "description": desc[:3500],
             "footer": {"text": f"{_n(p['vues'] / max(_heures_depuis(p['publie']), 0.25))} vues / heure"}}
 
 
@@ -104,8 +108,12 @@ def main():
             lignes.append(f"⏳ @{ps} : au passage suivant")
             continue
         sec = str(c.get("secUid") or "")
+        yt = str(c.get("youtube") or "")
         try:
-            lus = posts(ps, sec if _SEC.fullmatch(sec) else "")
+            if _UC.fullmatch(yt):                      # clippeur YouTube : ses Shorts via le flux RSS public
+                lus = [p for p in posts_youtube(yt) if p["type"] == "short"]
+            else:
+                lus = posts(ps, sec if _SEC.fullmatch(sec) else "")
         except Exception as e:
             erreurs += 1
             print(f"@{ps} : illisible ({str(e)[:160]})")
