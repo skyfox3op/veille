@@ -8,7 +8,7 @@
    "live": false
   },
   "kick:xqc": {
-   "absences": 0,
+   "absences": 1,
    "depuis": "2026-10-29T21:22:45Z",
    "id": "135124093",
    "live": true
@@ -28,7 +28,7 @@
    "live": false
   },
   "twitch:xqc": {
-   "absences": 0,
+   "absences": 1,
    "depuis": "2026-10-29T21:22:45Z",
    "id": null,
    "live": true
