@@ -1,0 +1,105 @@
+{
+ "_aide": "Clippeurs TikTok surveillés par radar_clippeurs.py (GitHub, toutes les 30 min). pseudo = sans @ ; secUid = identifiant TikTok (TikTok bloque la page de profil depuis GitHub, pas l'identifiant). Sans secUid, le pseudo est essayé quand même.",
+ "clippeurs": [
+  {
+   "pseudo": "clipartist1011",
+   "secUid": "MS4wLjABAAAAYvF2g6tFED1N0uTzp4ZqG8YAYVEaKQ4RmWVC_pSIA0G4pqd8LyayZWJXAt3Kl-ge"
+  },
+  {
+   "pseudo": "devclipz23",
+   "secUid": "MS4wLjABAAAAo5Htia2AkBU9co4v4Ltis61IAArBRTuiNiZf5paNSYAWnocrjRIFY9MbawVmPN8L"
+  },
+  {
+   "pseudo": "cloutplugz",
+   "secUid": "MS4wLjABAAAA6GIOs0_FQ8GTUdCptVPnQAAkkrAvyo049OxNMVZFWezs_2PKnK45KM_ZBA7wc_Sn"
+  },
+  {
+   "pseudo": "0012jtig",
+   "secUid": "MS4wLjABAAAAVGET5LVEQLx3LcsMwVVtPuswGwe2Du8UlRBYCFDsa2F2oMAGnrWBSM6kMhSWyEbd"
+  },
+  {
+   "pseudo": "theclipstudiox",
+   "secUid": "MS4wLjABAAAAPI4iIr4-r77HbuLnGqLjj64p1GiVMGL_aS8TkWR8x2aE8IEOXl3stCw24hKjbUpQ"
+  },
+  {
+   "pseudo": "clipsbyrl",
+   "secUid": "MS4wLjABAAAAqaq4k3DQgJykWZkzfcizpo-py7YsFGsyFwIYs0fGr2gVCyXxCAtmu78QfBEC0dBk"
+  },
+  {
+   "pseudo": "fnprosclips",
+   "secUid": "MS4wLjABAAAA23W3j4Mo_dK7lsQ3xSxQVeInarDxU1v2b-m1rKOSZs1UB_AKDeVH62caYGBy77es"
+  },
+  {
+   "pseudo": "streamer_files",
+   "secUid": "MS4wLjABAAAAVg1uIS2wJ6J9JM2_rAnhzmmZd3fdkCFLo5eXYGMlQe91pDUtrLCNNYNMfLaCSDkI"
+  },
+  {
+   "pseudo": "mjclippedu",
+   "secUid": null
+  },
+  {
+   "pseudo": "clipverse522",
+   "secUid": "MS4wLjABAAAAzwCz1VMnaRu5NrukIxaJrthHHUJksF0o0ztN_xTUrfnQVHG2qy1ADjw_i0Qy4zkX"
+  },
+  {
+   "pseudo": "chassyclips",
+   "secUid": null
+  },
+  {
+   "pseudo": "wcontentclip",
+   "secUid": "MS4wLjABAAAAs6GK15_vBTZ7A1Mo9H3jzH5RbokXV8bxcoiUcRY_k6gdX5eCbu3X8io1nsB8RhoG"
+  },
+  {
+   "pseudo": "clipstepper",
+   "secUid": "MS4wLjABAAAAmW7yE6MRNH2as3FPkK1FUboqxIN3Dhjvm1yAVAKl1Z6m_UfAMjo4f-IvowNVRrJQ"
+  },
+  {
+   "pseudo": "jrksclipz",
+   "secUid": "MS4wLjABAAAAsx32xdsl-ykruMwoxvFVu-moCl_itc9Bd_gkpah7GooBN7ogNUUNcEPm_BIUjV5I"
+  },
+  {
+   "pseudo": "clipslrs",
+   "secUid": "MS4wLjABAAAASlcmQd8viGcZDQRAoL5vNNduH3BE-811IqYnrN16GWsB64i8BtXrqYc1Xm-0vpzp"
+  },
+  {
+   "pseudo": "hyek_clips",
+   "secUid": "MS4wLjABAAAACUZFCRSYWN5Nxlq2ykQLTOcgXQRK-b9HEe9aVYwITmTCogNbmzANZthxOIlXLbQB"
+  },
+  {
+   "pseudo": "indieclips1",
+   "secUid": "MS4wLjABAAAA0HHiWfbPI648s3xpUOPyXUU6hNHc3aCxcfFi6xxpBCacxhj5jTUy9KYW3UPxpG2X"
+  },
+  {
+   "pseudo": "reelmarlon",
+   "secUid": "MS4wLjABAAAA9BpKHKlwanlL_J2HllFuYK5SFcjJFE0WRQ4JoYl707w8JDhMfiwgUP2dOLf6CcRu"
+  },
+  {
+   "pseudo": "itsnicktheplug",
+   "secUid": "MS4wLjABAAAA-TDK8CZGYOytJfUHNDZ9F08DZ5YfOrMA-wGF39PaBA4uAuPJ8PpgbKqz_aBejkqC"
+  },
+  {
+   "pseudo": "marlon3lgclipper",
+   "secUid": "MS4wLjABAAAAkD1aiNdTJkp1veo3nz-2tpE4cfJpOCBxxDcb_bfTj6ZFYQj3cVQA4lozXyg2Gzgt"
+  },
+  {
+   "pseudo": "clips7500",
+   "secUid": "MS4wLjABAAAAOcv_HuzrEpF66kCKEDnSTAa5dCJGD6Nz_NMFOweK7961zSz9Of7bfUbu-2UdvFuX"
+  },
+  {
+   "pseudo": "mrbeastclippingoff",
+   "secUid": "MS4wLjABAAAAM1uLuj20B6t2udMUTn8-s3dJe0NUluq4WphZZglBbEo3HsbGoCWMR7rNFvLP5tUV"
+  },
+  {
+   "pseudo": "m3lgtheworld",
+   "secUid": "MS4wLjABAAAAsw5pGkJ1IVLTUs4IztNgZ8O0DEUCqvyDIQl09F2EOcMPiwOV9rOra64RQGuMcHH4"
+  },
+  {
+   "pseudo": "n3onliveupdate",
+   "secUid": "MS4wLjABAAAASLPCKEOGaRVlO7NcaYvNKBeUTwqbGMW7qRrcP8r7bdj1SutpzsFpXzG4casyJmIz"
+  },
+  {
+   "pseudo": "togi.clips",
+   "secUid": "MS4wLjABAAAALjlFJAeb1oGaL47xHav8DqmeFV0vnSvwIv1w5AywP5F9npV0gYjX0tilFRxq036h"
+  }
+ ]
+}

@@ -11,7 +11,7 @@ on:
   workflow_dispatch:          # bouton « Run workflow » = mode test (envoie un état sur Discord)
   push:                       # quand tu modifies la liste des comptes : passage immédiat + résumé radar
     branches: [main]
-    paths: [comptes.json, radar.py]
+    paths: [comptes.json, radar.py, clippeurs.json, radar_clippeurs.py]
 
 permissions:
   contents: write             # seulement pour enregistrer les fichiers d'état (*_etat.json)
@@ -69,15 +69,21 @@ jobs:
           RADAR_JOURNAL: radar_alertes.json
           MODE: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') && '--test' || '' }}
         run: timeout 150 python3 radar.py $MODE
+      - name: Radar des clippeurs (TikTok qui percent)
+        continue-on-error: true
+        env:
+          DISCORD_WEBHOOK_RADAR: ${{ secrets.DISCORD_WEBHOOK_RADAR }}
+          MODE: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') && '--test' || '' }}
+        run: timeout 200 python3 radar_clippeurs.py $MODE
       - name: Enregistrer l'état
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          if [ -n "$(git status --porcelain -- '*_etat.json' radar_alertes.json)" ]; then
+          if [ -n "$(git status --porcelain -- '*_etat.json' radar_alertes.json radar_clippeurs_alertes.json)" ]; then
             git config user.name "veille-bot"
             git config user.email "veille-bot@users.noreply.github.com"
-            git add -A -- $(ls *_etat.json radar_alertes.json 2>/dev/null)
+            git add -A -- $(ls *_etat.json radar_alertes.json radar_clippeurs_alertes.json 2>/dev/null)
             git -c core.hooksPath=/dev/null commit -m "veille : état mis à jour"
             git pull --rebase --quiet || true
             git push
