@@ -32,5 +32,5 @@ Onglet Actions > « Veille (campagnes + streamers) » > Run workflow : envoie un
 - Alerte si un post récent dépasse les seuils `absolu` (ex. 100 k vues ou 20 k likes en moins de 10 h)
   ou fait `facteur` fois plus que l'habitude du compte au même âge (habitude recalculée 1 fois par jour).
 - Historique des posts repérés (titre, texte, vues, likes, raison) : `radar_alertes.json`.
-- Secret facultatif : `DISCORD_WEBHOOK_RADAR` (sinon le salon « lives » est utilisé).
+- Secret facultatif : `DISCORD_WEBHOOK_VIDEOS` (sinon le salon « lives » est utilisé).
 - Instagram n'est pas pris en charge : il exige un compte connecté et bannit les comptes qui scannent.
