@@ -89,8 +89,10 @@ def chaine_youtube(ident: str, cache: dict) -> str:
     return cache[ident]
 
 
-def posts_youtube(cid: str) -> list:
-    xml = _get(f"https://www.youtube.com/feeds/videos.xml?channel_id={cid}")
+def posts_youtube(cid: str, shorts_seulement: bool = False) -> list:
+    # flux « UUSH » = uniquement les Shorts de la chaîne (sûr, sans dépendre de la forme des liens)
+    xml = _get(f"https://www.youtube.com/feeds/videos.xml?playlist_id=UUSH{cid[2:]}" if shorts_seulement
+               else f"https://www.youtube.com/feeds/videos.xml?channel_id={cid}")
     ns = {"a": "http://www.w3.org/2005/Atom", "yt": "http://www.youtube.com/xml/schemas/2015",
           "m": "http://search.yahoo.com/mrss/"}
     out = []
@@ -99,7 +101,7 @@ def posts_youtube(cid: str) -> list:
         if not re.fullmatch(r"[\w-]{11}", vid):
             continue
         lien = e.find("a:link", ns)
-        court = "/shorts/" in (lien.get("href") if lien is not None else "")
+        court = shorts_seulement or "/shorts/" in (lien.get("href") if lien is not None else "")
         stats = e.find("m:group/m:community/m:statistics", ns)
         note = e.find("m:group/m:community/m:starRating", ns)
         try:

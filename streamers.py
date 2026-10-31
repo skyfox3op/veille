@@ -65,10 +65,11 @@ def _lire_iso(s: str):
 
 
 # ---------------------------------------------------------------- YouTube
-def videos_youtube(cid: str, longues_seulement: bool) -> list:
-    """Dernières vidéos d'une chaîne via le flux RSS public : [{id, titre, url, publie}]."""
+def videos_youtube(cid: str, longues_seulement: bool, flux: str = "UULF") -> list:
+    """Dernières vidéos d'une chaîne via le flux RSS public : [{id, titre, url, publie}].
+    flux « UULV » = rediffusions des lives (pour les streamers qui ne postent pas de vidéos)."""
     # flux « UULF » = seulement les vidéos (ni lives ni Shorts) ; sinon flux complet de la chaîne
-    xml = _get(f"https://www.youtube.com/feeds/videos.xml?playlist_id=UULF{cid[2:]}" if longues_seulement
+    xml = _get(f"https://www.youtube.com/feeds/videos.xml?playlist_id={flux}{cid[2:]}" if longues_seulement
                else f"https://www.youtube.com/feeds/videos.xml?channel_id={cid}")
     ns = {"a": "http://www.w3.org/2005/Atom", "yt": "http://www.youtube.com/xml/schemas/2015"}
     out = []
@@ -260,6 +261,9 @@ def verifier(cfg: dict, env: dict, etat: dict):
             if plat == "youtube":
                 try:
                     videos = videos_youtube(ident, cfg.get("videos_longues_seulement", True))
+                    if s.get("rediffusions"):              # streamer sans vidéos : ses rediffusions de stream
+                        videos = videos + [{**v, "titre": v["titre"].strip("\u200b \n") or "Rediffusion du stream"}
+                                           for v in videos_youtube(ident, True, "UULV")]
                 except Exception as e:
                     erreurs += 1
                     print(f"{nom} / flux YouTube : lecture impossible ({type(e).__name__})")

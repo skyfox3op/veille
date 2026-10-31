@@ -1,5 +1,5 @@
 {
-  "_aide": "Liste des streamers suivis. youtube = identifiants de chaîne (UC...), twitch / kick = pseudo dans l'URL. Mets null si absent.",
+  "_aide": "Liste des streamers suivis. youtube = identifiants de chaîne (UC...), twitch / kick = pseudo dans l'URL. Mets null si absent. \"rediffusions\": true = annonce aussi les rediffusions de ses streams YouTube (pour les streamers qui ne postent pas de vidéos).",
   "ping_lives": true,
   "videos_longues_seulement": true,
   "streamers": [
@@ -59,7 +59,8 @@
         "UCPYZ-R5LQGMeU7QikgxmH8Q"
       ],
       "twitch": null,
-      "kick": null
+      "kick": null,
+      "rediffusions": true
     }
   ]
 }

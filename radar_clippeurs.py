@@ -75,7 +75,7 @@ def embed(pseudo: str, p: dict, raisons: list) -> dict:
     if p.get("titre"):
         desc = f"**{p['titre']}**\n" + desc
     desc += f"\n\nTélécharger tous les clips qui ont percé aujourd'hui :\n```{COMMANDE}```"
-    return {"title": f"🔥 {pseudo} · {plat}", "url": p["url"], "color": 0xFF0000 if p.get("plat") == "youtube" else 0x25F4EE, "description": desc[:3500],
+    return {"title": f"🔥 {'@' if plat == 'TikTok' else ''}{pseudo} · {plat}", "url": p["url"], "color": 0xFF0000 if p.get("plat") == "youtube" else 0x25F4EE, "description": desc[:3500],
             "footer": {"text": f"{_n(p['vues'] / max(_heures_depuis(p['publie']), 0.25))} vues / heure"}}
 
 
@@ -111,7 +111,9 @@ def main():
         yt = str(c.get("youtube") or "")
         try:
             if _UC.fullmatch(yt):                      # clippeur YouTube : ses Shorts via le flux RSS public
-                lus = [p for p in posts_youtube(yt) if p["type"] == "short"]
+                lus = posts_youtube(yt, shorts_seulement=True)
+            elif yt:
+                raise RuntimeError("identifiant YouTube invalide dans clippeurs.json")
             else:
                 lus = posts(ps, sec if _SEC.fullmatch(sec) else "")
         except Exception as e:
@@ -147,7 +149,7 @@ def main():
                         f"{date_fr()}\n🧪 Test du radar des clippeurs" + (f" ({erreurs} illisible(s))" if erreurs else ""))
     if alertes:
         envoyer_discord(webhook, [embed(ps, p, r) for ps, p, r, _ in alertes],
-                        f"{date_fr()}\n🔥 TikTok de clippeurs qui percent :", ping=True)
+                        f"{date_fr()}\n🔥 Clips de clippeurs qui percent :", ping=True)
         try:
             journal = json.loads(JOURNAL.read_text(encoding="utf-8"))
         except (OSError, ValueError):
