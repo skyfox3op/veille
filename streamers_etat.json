@@ -1,8 +1,9 @@
 {
  "lives": {
   "kick:n3on": {
+   "absences": 0,
    "depuis": "2026-11-02T02:19:33Z",
-   "id": "135554687",
+   "id": "135670653",
    "live": true
   },
   "kick:xqc": {
@@ -13,7 +14,7 @@
    "live": false
   },
   "twitch:jynxzi": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-01T22:44:02Z",
    "id": null,
    "live": true
@@ -66,6 +67,7 @@
    "77oNNC349zs"
   ],
   "UCWsDFcIhY2DBi3GB5uykGXA": [
+   "uhMzbucFP88",
    "scfCKQEHvwI",
    "acXcYNO83fw",
    "7_6DqfzyYAE",
@@ -189,6 +191,7 @@
    "HwtyqN-ZCtQ"
   ],
   "UCsiqlKIUDHZJVG4smMvhF4w": [
+   "mvbdTIa2aoU",
    "9YpT7HzVTZs",
    "KnL1MztGpPo",
    "V0Yu-zGl4gg",
