@@ -7,31 +7,25 @@
    "live": true
   },
   "kick:xqc": {
-   "absences": 0,
-   "depuis": "2026-10-31T22:35:27Z",
-   "fin": "2026-11-01T15:03:38Z",
-   "id": "135345088",
-   "live": false
+   "depuis": "2026-11-03T02:18:02Z",
+   "id": "135685949",
+   "live": true
   },
   "twitch:jynxzi": {
-   "absences": 0,
+   "absences": 1,
    "depuis": "2026-11-01T22:44:02Z",
    "id": null,
    "live": true
   },
   "twitch:kaicenat": {
-   "absences": 0,
-   "depuis": "2026-10-31T02:31:32Z",
-   "fin": "2026-10-31T08:50:23Z",
+   "depuis": "2026-11-03T02:18:02Z",
    "id": null,
-   "live": false
+   "live": true
   },
   "twitch:xqc": {
-   "absences": 0,
-   "depuis": "2026-10-31T22:35:27Z",
-   "fin": "2026-11-01T15:03:38Z",
+   "depuis": "2026-11-03T02:18:02Z",
    "id": null,
-   "live": false
+   "live": true
   }
  },
  "videos": {
@@ -112,6 +106,7 @@
    "CWyKWikDj6c"
   ],
   "UCjiXtODGCCulmhwypZAWSag": [
+   "Rryn8DEn8wA",
    "HbsX4WRbYLM",
    "QtJVyj1IeiE",
    "z2BlmLIH1ac",
@@ -140,10 +135,10 @@
    "T6rSWVKSWqk",
    "4_PNyPkHJ1Y",
    "0FUhvkc5zvk",
-   "38WQcaorWv0",
-   "uJtaBkIAvGs"
+   "38WQcaorWv0"
   ],
   "UCmDTrq0LNgPodDOFZiSbsww": [
+   "dYPiqKPxkj0",
    "d8ubBgaBhwQ",
    "LBF3UY12mow",
    "ZLJ0LQyKnRo",
@@ -191,6 +186,7 @@
    "HwtyqN-ZCtQ"
   ],
   "UCsiqlKIUDHZJVG4smMvhF4w": [
+   "TTFWbsT1jlM",
    "mvbdTIa2aoU",
    "9YpT7HzVTZs",
    "KnL1MztGpPo",
