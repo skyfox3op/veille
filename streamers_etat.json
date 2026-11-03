@@ -8,10 +8,11 @@
    "live": false
   },
   "kick:xqc": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-03T02:18:02Z",
+   "fin": "2026-11-03T17:23:00Z",
    "id": "135685949",
-   "live": true
+   "live": false
   },
   "twitch:jynxzi": {
    "absences": 0,
@@ -28,6 +29,7 @@
    "live": false
   },
   "twitch:xqc": {
+   "absences": 1,
    "depuis": "2026-11-03T02:18:02Z",
    "id": null,
    "live": true
@@ -214,6 +216,7 @@
    "O2jr_66qe5s"
   ],
   "UCvCfpQXRXdJdL07pzTIA6Cw": [
+   "vjR8dq43BBo",
    "Yx6GmBWyjQ4",
    "psLsqqM5JY4",
    "yWvFwtH4Zzs",
