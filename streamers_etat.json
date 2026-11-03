@@ -1,12 +1,14 @@
 {
  "lives": {
   "kick:n3on": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-02T02:19:33Z",
+   "fin": "2026-11-03T09:58:49Z",
    "id": "135670653",
-   "live": true
+   "live": false
   },
   "kick:xqc": {
+   "absences": 1,
    "depuis": "2026-11-03T02:18:02Z",
    "id": "135685949",
    "live": true
@@ -19,10 +21,11 @@
    "live": false
   },
   "twitch:kaicenat": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-03T02:18:02Z",
+   "fin": "2026-11-03T09:58:49Z",
    "id": null,
-   "live": true
+   "live": false
   },
   "twitch:xqc": {
    "depuis": "2026-11-03T02:18:02Z",
