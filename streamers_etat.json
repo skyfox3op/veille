@@ -1,7 +1,7 @@
 {
  "lives": {
   "kick:n3on": {
-   "absences": 0,
+   "absences": 1,
    "depuis": "2026-11-02T02:19:33Z",
    "id": "135670653",
    "live": true
@@ -19,6 +19,7 @@
    "live": false
   },
   "twitch:kaicenat": {
+   "absences": 1,
    "depuis": "2026-11-03T02:18:02Z",
    "id": null,
    "live": true
@@ -187,6 +188,7 @@
    "HwtyqN-ZCtQ"
   ],
   "UCsiqlKIUDHZJVG4smMvhF4w": [
+   "mu4rIqohUHw",
    "TTFWbsT1jlM",
    "mvbdTIa2aoU",
    "9YpT7HzVTZs",
@@ -209,6 +211,8 @@
    "O2jr_66qe5s"
   ],
   "UCvCfpQXRXdJdL07pzTIA6Cw": [
+   "Yx6GmBWyjQ4",
+   "psLsqqM5JY4",
    "yWvFwtH4Zzs",
    "R6gKMvetXUU",
    "qLo64OdLKBE",
