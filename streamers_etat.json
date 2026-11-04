@@ -1,10 +1,11 @@
 {
  "lives": {
   "kick:adinross": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-04T11:28:55Z",
+   "fin": "2026-11-04T18:48:37Z",
    "id": "135939661",
-   "live": true
+   "live": false
   },
   "kick:n3on": {
    "absences": 0,
