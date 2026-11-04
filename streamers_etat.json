@@ -15,18 +15,14 @@
    "live": false
   },
   "kick:xqc": {
-   "absences": 0,
-   "depuis": "2026-11-03T22:27:11Z",
-   "fin": "2026-11-04T17:50:29Z",
-   "id": "135858332",
-   "live": false
+   "depuis": "2026-11-04T23:04:43Z",
+   "id": "136033637",
+   "live": true
   },
   "twitch:jynxzi": {
-   "absences": 0,
-   "depuis": "2026-11-03T22:27:11Z",
-   "fin": "2026-11-04T09:53:44Z",
+   "depuis": "2026-11-04T23:04:43Z",
    "id": null,
-   "live": false
+   "live": true
   },
   "twitch:kaicenat": {
    "absences": 0,
@@ -36,11 +32,9 @@
    "live": false
   },
   "twitch:xqc": {
-   "absences": 0,
-   "depuis": "2026-11-03T22:27:11Z",
-   "fin": "2026-11-04T17:50:29Z",
+   "depuis": "2026-11-04T23:04:43Z",
    "id": null,
-   "live": false
+   "live": true
   }
  },
  "videos": {
