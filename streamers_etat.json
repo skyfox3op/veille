@@ -1,12 +1,19 @@
 {
  "lives": {
-  "kick:n3on": {
-   "absences": 1,
-   "depuis": "2026-11-03T23:12:19Z",
-   "id": "135864464",
+  "kick:adinross": {
+   "depuis": "2026-11-04T11:28:55Z",
+   "id": "135939661",
    "live": true
   },
+  "kick:n3on": {
+   "absences": 0,
+   "depuis": "2026-11-03T23:12:19Z",
+   "fin": "2026-11-04T11:28:55Z",
+   "id": "135864464",
+   "live": false
+  },
   "kick:xqc": {
+   "absences": 1,
    "depuis": "2026-11-03T22:27:11Z",
    "id": "135858332",
    "live": true
@@ -26,6 +33,7 @@
    "live": false
   },
   "twitch:xqc": {
+   "absences": 1,
    "depuis": "2026-11-03T22:27:11Z",
    "id": null,
    "live": true
