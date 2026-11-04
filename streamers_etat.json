@@ -1,6 +1,7 @@
 {
  "lives": {
   "kick:adinross": {
+   "absences": 1,
    "depuis": "2026-11-04T11:28:55Z",
    "id": "135939661",
    "live": true
@@ -13,10 +14,11 @@
    "live": false
   },
   "kick:xqc": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-03T22:27:11Z",
+   "fin": "2026-11-04T17:50:29Z",
    "id": "135858332",
-   "live": true
+   "live": false
   },
   "twitch:jynxzi": {
    "absences": 0,
@@ -33,10 +35,11 @@
    "live": false
   },
   "twitch:xqc": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-03T22:27:11Z",
+   "fin": "2026-11-04T17:50:29Z",
    "id": null,
-   "live": true
+   "live": false
   }
  },
  "videos": {
@@ -72,6 +75,7 @@
    "77oNNC349zs"
   ],
   "UCWsDFcIhY2DBi3GB5uykGXA": [
+   "vYuLOp5GISE",
    "uhMzbucFP88",
    "scfCKQEHvwI",
    "acXcYNO83fw",
