@@ -8,10 +8,11 @@
    "live": false
   },
   "kick:n3on": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-09T01:53:56Z",
+   "fin": "2026-11-09T09:59:56Z",
    "id": "136790875",
-   "live": true
+   "live": false
   },
   "kick:xqc": {
    "absences": 0,
