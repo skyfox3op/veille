@@ -8,11 +8,9 @@
    "live": false
   },
   "kick:n3on": {
-   "absences": 0,
-   "depuis": "2026-11-08T07:29:20Z",
-   "fin": "2026-11-08T14:28:57Z",
-   "id": "136660307",
-   "live": false
+   "depuis": "2026-11-09T01:53:56Z",
+   "id": "136790875",
+   "live": true
   },
   "kick:xqc": {
    "absences": 0,
@@ -22,6 +20,7 @@
    "live": false
   },
   "twitch:jynxzi": {
+   "absences": 1,
    "depuis": "2026-11-08T22:23:46Z",
    "id": null,
    "live": true
