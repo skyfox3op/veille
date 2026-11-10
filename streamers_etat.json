@@ -11,6 +11,7 @@
    "live": true
   },
   "kick:xqc": {
+   "absences": 1,
    "depuis": "2026-11-09T20:40:14Z",
    "id": "136925910",
    "live": true
@@ -28,6 +29,7 @@
    "live": true
   },
   "twitch:xqc": {
+   "absences": 1,
    "depuis": "2026-11-09T20:40:14Z",
    "id": null,
    "live": true
@@ -40,6 +42,7 @@
    "qLUAaXIAjLo"
   ],
   "UCPYZ-R5LQGMeU7QikgxmH8Q": [
+   "FgbAodKMzL0",
    "iIvxI16xr4w",
    "STUoUWagT6Q",
    "75R_qjQStow",
@@ -97,6 +100,7 @@
    "SOW3qCJJSlQ"
   ],
   "UCey-eDTR5J6xU6pZ2f4guoA": [
+   "AmeL08KCl78",
    "BkAKbFLVccs",
    "_NiTTEkcPsg",
    "EliIBflaMrk",
@@ -197,6 +201,12 @@
    "HwtyqN-ZCtQ"
   ],
   "UCsiqlKIUDHZJVG4smMvhF4w": [
+   "CgkQSrdw2lM",
+   "F-Zezotuo0Q",
+   "FMtdgMLVmhw",
+   "AAfyhNd2bi4",
+   "DHX3RlCvDIQ",
+   "FTdz09rJT4w",
    "l6KoX1z8ey8",
    "PB1Nr47CtaM",
    "o3wmvj4mPng",
@@ -220,13 +230,7 @@
    "5d9okSePb1A",
    "hEW2GMxxxjQ",
    "CnYCuLZpS3A",
-   "MebGKTC2uig",
-   "7f_1PsODXaI",
-   "tBd-lI6FaGc",
-   "pBojdgSTRng",
-   "--iCNbde-iY",
-   "zZ0RA1nZUKc",
-   "nLqURtIaa1A"
+   "MebGKTC2uig"
   ],
   "UCvCfpQXRXdJdL07pzTIA6Cw": [
    "uvVPjWM-uDs",
