@@ -27,10 +27,11 @@
    "live": false
   },
   "twitch:kaicenat": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-05T21:54:58Z",
+   "fin": "2026-11-11T14:00:12Z",
    "id": null,
-   "live": true
+   "live": false
   },
   "twitch:xqc": {
    "absences": 0,
@@ -239,6 +240,7 @@
    "7Id8zAn6gHM"
   ],
   "UCvCfpQXRXdJdL07pzTIA6Cw": [
+   "MX8wnu3xXeM",
    "jq83SsgAY_0",
    "1PKa4MZrHfU",
    "uvVPjWM-uDs",
