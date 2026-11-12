@@ -1,13 +1,13 @@
 {
  "lives": {
   "kick:adinross": {
-   "absences": 0,
+   "absences": 1,
    "depuis": "2026-11-10T02:39:03Z",
    "id": "137321031",
    "live": true
   },
   "kick:n3on": {
-   "absences": 0,
+   "absences": 1,
    "depuis": "2026-11-10T02:39:03Z",
    "id": "137320696",
    "live": true
@@ -18,6 +18,7 @@
    "live": true
   },
   "twitch:jynxzi": {
+   "absences": 1,
    "depuis": "2026-11-11T21:14:18Z",
    "id": null,
    "live": true
@@ -156,6 +157,7 @@
    "EQ_14XV_v58"
   ],
   "UCmDTrq0LNgPodDOFZiSbsww": [
+   "GYvsvHxKRw8",
    "4Qwq5OD4Mf4",
    "tFLWgLdvs18",
    "CqXYTpN9KgI",
@@ -184,8 +186,7 @@
    "PIWHAw6uHJk",
    "dXxRjWyyldg",
    "TiFUVDszvQs",
-   "sgkahRSIJE0",
-   "TCaN7YOKO94"
+   "sgkahRSIJE0"
   ],
   "UCoEmptob-eEGKk18c2VplJg": [
    "Dt36OGjw26Y",
@@ -205,6 +206,7 @@
    "HwtyqN-ZCtQ"
   ],
   "UCsiqlKIUDHZJVG4smMvhF4w": [
+   "qdc0kowCVqo",
    "4Vd8wg-GjfA",
    "WvWi3mPpX_E",
    "57DBkyRdSss",
@@ -233,8 +235,7 @@
    "KnL1MztGpPo",
    "V0Yu-zGl4gg",
    "Yc7a8UOOVG8",
-   "YiOpfkDUdCE",
-   "sCxkvhMCSVQ"
+   "YiOpfkDUdCE"
   ],
   "UCvCfpQXRXdJdL07pzTIA6Cw": [
    "MX8wnu3xXeM",
