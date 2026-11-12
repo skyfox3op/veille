@@ -8,11 +8,9 @@
    "live": false
   },
   "kick:n3on": {
-   "absences": 0,
-   "depuis": "2026-11-10T02:39:03Z",
-   "fin": "2026-11-12T08:13:55Z",
-   "id": "137320696",
-   "live": false
+   "depuis": "2026-11-12T22:37:24Z",
+   "id": "137495764",
+   "live": true
   },
   "kick:xqc": {
    "absences": 0,
@@ -22,11 +20,9 @@
    "live": false
   },
   "twitch:jynxzi": {
-   "absences": 0,
-   "depuis": "2026-11-11T21:14:18Z",
-   "fin": "2026-11-12T08:13:55Z",
+   "depuis": "2026-11-12T22:37:24Z",
    "id": null,
-   "live": false
+   "live": true
   },
   "twitch:kaicenat": {
    "absences": 0,
@@ -165,6 +161,7 @@
    "EQ_14XV_v58"
   ],
   "UCmDTrq0LNgPodDOFZiSbsww": [
+   "9ItweLzH_5c",
    "SH-6kSN0hTg",
    "GYvsvHxKRw8",
    "4Qwq5OD4Mf4",
@@ -193,8 +190,7 @@
    "mocM5Gg03Fg",
    "NDYKso-WwL4",
    "PIWHAw6uHJk",
-   "dXxRjWyyldg",
-   "TiFUVDszvQs"
+   "dXxRjWyyldg"
   ],
   "UCoEmptob-eEGKk18c2VplJg": [
    "Dt36OGjw26Y",
