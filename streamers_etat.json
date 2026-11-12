@@ -3,21 +3,19 @@
   "kick:adinross": {
    "absences": 0,
    "depuis": "2026-11-10T02:39:03Z",
-   "id": "137138804",
+   "id": "137321031",
    "live": true
   },
   "kick:n3on": {
    "absences": 0,
    "depuis": "2026-11-10T02:39:03Z",
-   "id": "137138802",
+   "id": "137320696",
    "live": true
   },
   "kick:xqc": {
-   "absences": 0,
-   "depuis": "2026-11-09T20:40:14Z",
-   "fin": "2026-11-10T18:35:51Z",
-   "id": "136925910",
-   "live": false
+   "depuis": "2026-11-12T01:01:52Z",
+   "id": "137303641",
+   "live": true
   },
   "twitch:jynxzi": {
    "depuis": "2026-11-11T21:14:18Z",
@@ -32,11 +30,9 @@
    "live": false
   },
   "twitch:xqc": {
-   "absences": 0,
-   "depuis": "2026-11-09T20:40:14Z",
-   "fin": "2026-11-10T18:35:51Z",
+   "depuis": "2026-11-12T01:01:52Z",
    "id": null,
-   "live": false
+   "live": true
   }
  },
  "videos": {
@@ -160,6 +156,7 @@
    "EQ_14XV_v58"
   ],
   "UCmDTrq0LNgPodDOFZiSbsww": [
+   "4Qwq5OD4Mf4",
    "tFLWgLdvs18",
    "CqXYTpN9KgI",
    "DmlTnp9_0Io",
@@ -188,8 +185,7 @@
    "dXxRjWyyldg",
    "TiFUVDszvQs",
    "sgkahRSIJE0",
-   "TCaN7YOKO94",
-   "ZGmJhmH8noI"
+   "TCaN7YOKO94"
   ],
   "UCoEmptob-eEGKk18c2VplJg": [
    "Dt36OGjw26Y",
