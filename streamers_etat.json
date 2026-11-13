@@ -22,10 +22,11 @@
    "live": false
   },
   "twitch:jynxzi": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-12T22:37:24Z",
+   "fin": "2026-11-13T10:48:21Z",
    "id": null,
-   "live": true
+   "live": false
   },
   "twitch:kaicenat": {
    "absences": 0,
@@ -213,6 +214,7 @@
    "HwtyqN-ZCtQ"
   ],
   "UCsiqlKIUDHZJVG4smMvhF4w": [
+   "Grev7U4xMWI",
    "Yf9Y1BVGk9I",
    "qdc0kowCVqo",
    "4Vd8wg-GjfA",
@@ -241,10 +243,11 @@
    "mvbdTIa2aoU",
    "9YpT7HzVTZs",
    "KnL1MztGpPo",
-   "V0Yu-zGl4gg",
-   "Yc7a8UOOVG8"
+   "V0Yu-zGl4gg"
   ],
   "UCvCfpQXRXdJdL07pzTIA6Cw": [
+   "QYgduoj4QPY",
+   "juFnXA7rhOk",
    "MX8wnu3xXeM",
    "jq83SsgAY_0",
    "1PKa4MZrHfU",
@@ -272,9 +275,7 @@
    "-5fg-_92oaI",
    "nJr3HD-fvaY",
    "yKM5V1gIcZg",
-   "NC3U-BGFK00",
-   "vn94r5iI0ws",
-   "WQwSEB76nmM"
+   "NC3U-BGFK00"
   ]
  }
 }
