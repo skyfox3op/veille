@@ -15,10 +15,11 @@
    "live": false
   },
   "kick:xqc": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-15T00:11:52Z",
+   "fin": "2026-11-15T15:29:37Z",
    "id": "137883983",
-   "live": true
+   "live": false
   },
   "twitch:jynxzi": {
    "absences": 0,
@@ -35,10 +36,11 @@
    "live": false
   },
   "twitch:xqc": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-15T00:11:52Z",
+   "fin": "2026-11-15T15:29:37Z",
    "id": null,
-   "live": true
+   "live": false
   }
  },
  "videos": {
@@ -163,6 +165,7 @@
    "EQ_14XV_v58"
   ],
   "UCmDTrq0LNgPodDOFZiSbsww": [
+   "uOn8kedtcz8",
    "9Sxo_KAeCfA",
    "NUsdOxqAOaQ",
    "8FKAnjxQ7Uk",
@@ -191,8 +194,7 @@
    "9hN5DKcdCjA",
    "eRQQ_z1bEWM",
    "LnNbXXja9mg",
-   "LIhLHFKKivU",
-   "mocM5Gg03Fg"
+   "LIhLHFKKivU"
   ],
   "UCoEmptob-eEGKk18c2VplJg": [
    "Dt36OGjw26Y",
