@@ -8,6 +8,7 @@
    "live": false
   },
   "kick:n3on": {
+   "absences": 1,
    "depuis": "2026-11-15T00:11:52Z",
    "id": "137878318",
    "live": true
@@ -18,10 +19,11 @@
    "live": true
   },
   "twitch:jynxzi": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-14T20:35:24Z",
+   "fin": "2026-11-15T07:03:51Z",
    "id": null,
-   "live": true
+   "live": false
   },
   "twitch:kaicenat": {
    "absences": 0,
