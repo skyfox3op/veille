@@ -22,10 +22,11 @@
    "live": false
   },
   "twitch:jynxzi": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-17T00:44:31Z",
+   "fin": "2026-11-17T08:59:59Z",
    "id": null,
-   "live": true
+   "live": false
   },
   "twitch:kaicenat": {
    "absences": 0,
