@@ -8,6 +8,7 @@
    "live": false
   },
   "kick:n3on": {
+   "absences": 1,
    "depuis": "2026-11-18T17:07:11Z",
    "id": "138538139",
    "live": true
@@ -18,11 +19,9 @@
    "live": true
   },
   "twitch:jynxzi": {
-   "absences": 0,
-   "depuis": "2026-11-17T17:52:10Z",
-   "fin": "2026-11-18T09:01:23Z",
+   "depuis": "2026-11-18T23:23:04Z",
    "id": null,
-   "live": false
+   "live": true
   },
   "twitch:kaicenat": {
    "depuis": "2026-11-18T17:07:11Z",
@@ -42,6 +41,7 @@
    "qLUAaXIAjLo"
   ],
   "UCPYZ-R5LQGMeU7QikgxmH8Q": [
+   "Y5RalHynlAs",
    "FgbAodKMzL0",
    "iIvxI16xr4w",
    "STUoUWagT6Q",
@@ -105,6 +105,7 @@
    "RJzspH1rAbc"
   ],
   "UCey-eDTR5J6xU6pZ2f4guoA": [
+   "MJojTnIDzhE",
    "HCElcgnnfpM",
    "LFsrz2R0-DE",
    "xypWziKpKqc",
@@ -160,6 +161,9 @@
    "IfMOa6Zsyjw"
   ],
   "UCmDTrq0LNgPodDOFZiSbsww": [
+   "Tg90IZCrd9g",
+   "UfmrSYPbvfw",
+   "8MEpbNgU3FA",
    "3Nk06L1yJUA",
    "EfjuhiFNJYw",
    "1TfkYbn11U0",
@@ -186,10 +190,7 @@
    "zMVknDf4rqY",
    "z10XPxQFQ0w",
    "dYPiqKPxkj0",
-   "d8ubBgaBhwQ",
-   "LBF3UY12mow",
-   "ZLJ0LQyKnRo",
-   "_uZaK3BnBco"
+   "d8ubBgaBhwQ"
   ],
   "UCoEmptob-eEGKk18c2VplJg": [
    "Dt36OGjw26Y",
@@ -209,6 +210,7 @@
    "HwtyqN-ZCtQ"
   ],
   "UCsiqlKIUDHZJVG4smMvhF4w": [
+   "dQqHMeLuKkc",
    "ZkbIubnioCM",
    "E7XJhhYA93U",
    "6dI5y0YRkxA",
@@ -237,10 +239,10 @@
    "o3wmvj4mPng",
    "OJr3oK--L-w",
    "q0wGLKcphLI",
-   "oJ_zou9CDu4",
-   "vUDamBCUYVw"
+   "oJ_zou9CDu4"
   ],
   "UCvCfpQXRXdJdL07pzTIA6Cw": [
+   "7mjhCbFi9Wk",
    "wKmIqTs2LoE",
    "_AY5krZErfg",
    "QYgduoj4QPY",
@@ -269,8 +271,7 @@
    "37qhP-qt7BE",
    "skFPWdfJE7o",
    "I14AJ40Jlzs",
-   "-5fg-_92oaI",
-   "nJr3HD-fvaY"
+   "-5fg-_92oaI"
   ]
  }
 }
