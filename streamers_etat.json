@@ -1,20 +1,23 @@
 {
  "lives": {
   "kick:adinross": {
+   "absences": 1,
    "depuis": "2026-11-19T07:49:33Z",
    "id": "138789207",
    "live": true
   },
   "kick:n3on": {
+   "absences": 1,
    "depuis": "2026-11-19T07:49:33Z",
    "id": "138791283",
    "live": true
   },
   "kick:xqc": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-18T07:55:06Z",
+   "fin": "2026-11-19T13:45:18Z",
    "id": "138518029",
-   "live": true
+   "live": false
   },
   "twitch:jynxzi": {
    "absences": 0,
@@ -29,10 +32,11 @@
    "live": true
   },
   "twitch:xqc": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-18T07:55:06Z",
+   "fin": "2026-11-19T13:45:18Z",
    "id": null,
-   "live": true
+   "live": false
   }
  },
  "videos": {
@@ -162,6 +166,7 @@
    "IfMOa6Zsyjw"
   ],
   "UCmDTrq0LNgPodDOFZiSbsww": [
+   "UAw-wZeA0F8",
    "L7KXEeEePlo",
    "MDxBl2tF9P0",
    "LUE2681HACI",
@@ -190,8 +195,7 @@
    "2dt3R6w9ZYA",
    "57NQoPUDupQ",
    "tXFTtWo21Uk",
-   "1cwL_pjHP-E",
-   "uuNrmO18lbA"
+   "1cwL_pjHP-E"
   ],
   "UCoEmptob-eEGKk18c2VplJg": [
    "Dt36OGjw26Y",
