@@ -1,6 +1,7 @@
 {
  "lives": {
   "kick:adinross": {
+   "absences": 1,
    "depuis": "2026-11-20T10:53:32Z",
    "id": "139081066",
    "live": true
@@ -13,10 +14,11 @@
    "live": false
   },
   "kick:xqc": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-19T21:52:30Z",
+   "fin": "2026-11-20T16:01:35Z",
    "id": "138952164",
-   "live": true
+   "live": false
   },
   "twitch:jynxzi": {
    "absences": 0,
@@ -31,10 +33,11 @@
    "live": true
   },
   "twitch:xqc": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-19T21:52:30Z",
+   "fin": "2026-11-20T16:01:35Z",
    "id": null,
-   "live": true
+   "live": false
   }
  },
  "videos": {
@@ -44,6 +47,8 @@
    "qLUAaXIAjLo"
   ],
   "UCPYZ-R5LQGMeU7QikgxmH8Q": [
+   "jAulkD5_TAU",
+   "AW6MF6Me77I",
    "_HcTcY8ptGw",
    "fscdHTbHnSE",
    "NUpUV1eoNV8",
@@ -71,9 +76,7 @@
    "UVX8869zoCM",
    "W1YrTJs-hVw",
    "NiPC7QofmXI",
-   "2IeXDEOcbSg",
-   "oafS9P4zFZo",
-   "WL8ye_MLsZU"
+   "2IeXDEOcbSg"
   ],
   "UCWsDFcIhY2DBi3GB5uykGXA": [
    "PHSsdHu2Er0",
@@ -165,6 +168,8 @@
    "IfMOa6Zsyjw"
   ],
   "UCmDTrq0LNgPodDOFZiSbsww": [
+   "xw4eJS-ppXI",
+   "SJr0Gvwn5pI",
    "Rx5xdOtdPRQ",
    "rcpAZ_bffv4",
    "dXmyhh0r6bo",
@@ -192,9 +197,7 @@
    "SH-6kSN0hTg",
    "GYvsvHxKRw8",
    "4Qwq5OD4Mf4",
-   "tFLWgLdvs18",
-   "CqXYTpN9KgI",
-   "DmlTnp9_0Io"
+   "tFLWgLdvs18"
   ],
   "UCoEmptob-eEGKk18c2VplJg": [
    "Dt36OGjw26Y",
