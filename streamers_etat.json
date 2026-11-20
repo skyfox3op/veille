@@ -1,19 +1,19 @@
 {
  "lives": {
   "kick:adinross": {
-   "absences": 0,
-   "depuis": "2026-11-19T07:49:33Z",
-   "fin": "2026-11-19T17:16:22Z",
-   "id": "138789207",
-   "live": false
-  },
-  "kick:n3on": {
-   "absences": 1,
-   "depuis": "2026-11-19T21:52:30Z",
-   "id": "139025686",
+   "depuis": "2026-11-20T10:53:32Z",
+   "id": "139081066",
    "live": true
   },
+  "kick:n3on": {
+   "absences": 0,
+   "depuis": "2026-11-19T21:52:30Z",
+   "fin": "2026-11-20T10:53:32Z",
+   "id": "139025686",
+   "live": false
+  },
   "kick:xqc": {
+   "absences": 1,
    "depuis": "2026-11-19T21:52:30Z",
    "id": "138952164",
    "live": true
@@ -31,6 +31,7 @@
    "live": true
   },
   "twitch:xqc": {
+   "absences": 1,
    "depuis": "2026-11-19T21:52:30Z",
    "id": null,
    "live": true
@@ -43,6 +44,8 @@
    "qLUAaXIAjLo"
   ],
   "UCPYZ-R5LQGMeU7QikgxmH8Q": [
+   "_HcTcY8ptGw",
+   "fscdHTbHnSE",
    "NUpUV1eoNV8",
    "D9AIE7aHqg4",
    "77oNNC349zs",
@@ -70,9 +73,7 @@
    "NiPC7QofmXI",
    "2IeXDEOcbSg",
    "oafS9P4zFZo",
-   "WL8ye_MLsZU",
-   "jAulkD5_TAU",
-   "AW6MF6Me77I"
+   "WL8ye_MLsZU"
   ],
   "UCWsDFcIhY2DBi3GB5uykGXA": [
    "PHSsdHu2Er0",
@@ -164,6 +165,8 @@
    "IfMOa6Zsyjw"
   ],
   "UCmDTrq0LNgPodDOFZiSbsww": [
+   "Rx5xdOtdPRQ",
+   "rcpAZ_bffv4",
    "dXmyhh0r6bo",
    "Bm2THrfhonQ",
    "hJ1P0Bzx3fM",
@@ -191,9 +194,7 @@
    "4Qwq5OD4Mf4",
    "tFLWgLdvs18",
    "CqXYTpN9KgI",
-   "DmlTnp9_0Io",
-   "dyaa55WQCUA",
-   "2dt3R6w9ZYA"
+   "DmlTnp9_0Io"
   ],
   "UCoEmptob-eEGKk18c2VplJg": [
    "Dt36OGjw26Y",
