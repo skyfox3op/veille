@@ -1,10 +1,11 @@
 {
  "lives": {
   "kick:adinross": {
-   "absences": 1,
+   "absences": 0,
    "depuis": "2026-11-21T11:39:17Z",
+   "fin": "2026-11-21T19:03:39Z",
    "id": "139323569",
-   "live": true
+   "live": false
   },
   "kick:n3on": {
    "absences": 0,
@@ -21,11 +22,9 @@
    "live": false
   },
   "twitch:jynxzi": {
-   "absences": 0,
-   "depuis": "2026-11-20T18:59:16Z",
-   "fin": "2026-11-21T07:46:01Z",
+   "depuis": "2026-11-21T19:03:39Z",
    "id": null,
-   "live": false
+   "live": true
   },
   "twitch:kaicenat": {
    "absences": 0,
@@ -252,6 +251,7 @@
    "q0wGLKcphLI"
   ],
   "UCvCfpQXRXdJdL07pzTIA6Cw": [
+   "LZXLSifc3PI",
    "7mjhCbFi9Wk",
    "wKmIqTs2LoE",
    "_AY5krZErfg",
@@ -280,8 +280,7 @@
    "FuSg7DdZGCM",
    "37qhP-qt7BE",
    "skFPWdfJE7o",
-   "I14AJ40Jlzs",
-   "-5fg-_92oaI"
+   "I14AJ40Jlzs"
   ]
  }
 }
